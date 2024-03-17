@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import CrabHeader from './components/CrabHeader';
 import Main from './pages/Main';
+import Stand from './pages/Stand';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(
@@ -35,7 +37,8 @@ function App() {
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path="/login" element={<Login />} />
-              <Route path="*" element={<div>Any page</div>} />
+              <Route path='stand/:id' element={<Stand />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Content>
         </Layout>

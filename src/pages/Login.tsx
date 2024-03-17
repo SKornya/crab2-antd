@@ -3,12 +3,15 @@ import { FunctionComponent } from 'react';
 
 import styles from '../App.module.less';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Login: FunctionComponent = () => {
   interface FieldsTypes {
     username?: string;
     password?: string;
   }
+
+  const navigate = useNavigate();
 
   return (
     <Flex align="center" justify="center">
@@ -18,7 +21,10 @@ const Login: FunctionComponent = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={(values: FieldsTypes) => {console.log(values)}}
+        onFinish={(values: FieldsTypes) => {
+          console.log(values);
+          return navigate('/');
+        }}
       >
         <Form.Item
           name="username"

@@ -5,7 +5,6 @@ import { FunctionComponent } from 'react';
 import styles from '../App.module.less';
 
 const Main: FunctionComponent = () => {
-
   const dataSource = [
     {
       key: 1,
@@ -16,7 +15,7 @@ const Main: FunctionComponent = () => {
       key: 2,
       name: <TableOutlined />,
       value: 43,
-    }
+    },
   ];
 
   const columns = [
@@ -29,7 +28,7 @@ const Main: FunctionComponent = () => {
       title: 'value',
       dataIndex: 'value',
       key: 'value',
-    }
+    },
   ];
 
   return (
