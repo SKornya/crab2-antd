@@ -24,6 +24,8 @@ function App() {
     );
   };
 
+  console.log(123);
+
   return (
     <BrowserRouter>
       <ConfigProvider

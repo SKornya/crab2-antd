@@ -1,8 +1,9 @@
 import { TableOutlined, TagOutlined } from '@ant-design/icons';
-import { Table } from 'antd';
+import { Button, Layout, Table } from 'antd';
 import { FunctionComponent } from 'react';
 
 import styles from '../App.module.less';
+import { Content } from 'antd/es/layout/layout';
 
 const Main: FunctionComponent = () => {
   const dataSource = [
@@ -32,7 +33,19 @@ const Main: FunctionComponent = () => {
   ];
 
   return (
-    <Table className={styles.table} dataSource={dataSource} columns={columns} />
+    <Layout>
+      <Content style={{ margin: '50px' }}>
+        <Button type="primary" ghost size="large">
+          Add new
+        </Button>
+        <Table
+          bordered
+          className={styles.table}
+          dataSource={dataSource}
+          columns={columns}
+        />
+      </Content>
+    </Layout>
   );
 };
 
