@@ -4,6 +4,7 @@ import { FunctionComponent } from 'react';
 
 import styles from '../App.module.less';
 import { Content } from 'antd/es/layout/layout';
+import { Link } from 'react-router-dom';
 
 const Main: FunctionComponent = () => {
   const dataSource = [
@@ -35,9 +36,11 @@ const Main: FunctionComponent = () => {
   return (
     <Layout>
       <Content style={{ margin: '50px' }}>
-        <Button type="primary" ghost size="large">
-          Add new
-        </Button>
+        <Link to={'/login'}>
+          <Button type="primary" ghost size="large">
+            To login page
+          </Button>
+        </Link>
         <Table
           bordered
           className={styles.table}
