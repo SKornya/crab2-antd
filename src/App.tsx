@@ -24,10 +24,8 @@ function App() {
     );
   };
 
-  console.log(123);
-
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/${import.meta.env.BASE_URL}`}>
       <ConfigProvider
         theme={{
           algorithm: isDarkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
@@ -37,9 +35,9 @@ function App() {
           <CrabHeader isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
           <Content className={styles.content}>
             <Routes>
-              <Route path='/' element={<Main />} />
+              <Route path="/" element={<Main />} />
               <Route path="/login" element={<Login />} />
-              <Route path='stand/:id' element={<Stand />} />
+              <Route path="stand/:id" element={<Stand />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Content>
